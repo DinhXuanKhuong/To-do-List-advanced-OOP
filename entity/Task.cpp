@@ -1,24 +1,17 @@
 #include "Task.h"
 
 // Default constructor
-Task::Task() : _title(""), _deadline(), _type(LOW), _isCompleted(false) {}
+Task::Task() : _title(""),_isCompleted(false) {}
 
 // Parameterized constructor
-Task::Task(const string& title, const Date& date, Type type, bool isCompleted)
-    : _title(title), _deadline(date), _type(type), _isCompleted(isCompleted) {}
+Task::Task(const string& title, bool isCompleted)
+    : _title(title), _isCompleted(isCompleted) {}
 
 // Getter methods
 string Task::title() const {
     return _title;
 }
 
-Date Task::deadline() const {
-    return _deadline;
-}
-
-Task::Type Task::type() const {
-    return _type;
-}
 
 bool Task::isCompleted() const {
     return _isCompleted;
@@ -27,14 +20,6 @@ bool Task::isCompleted() const {
 // Setter methods
 void Task::setTitle(const string& title) {
     _title = title;
-}
-
-void Task::setDate(const Date& date) {
-    _deadline = date;
-}
-
-void Task::setType(Type type) {
-    _type = type;
 }
 
 void Task::setIsCompleted(bool isCompleted) {
