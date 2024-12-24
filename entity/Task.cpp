@@ -4,8 +4,8 @@
 Task::Task() : _title(""),_isCompleted(false) {}
 
 // Parameterized constructor
-Task::Task(const string& title, bool isCompleted)
-    : _title(title), _isCompleted(isCompleted) {}
+Task::Task(const string& title)
+    : _title(title), _isCompleted(false){}
 
 // Getter methods
 string Task::title() const {

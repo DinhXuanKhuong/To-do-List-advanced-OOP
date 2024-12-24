@@ -14,7 +14,7 @@ private:
 public:
     // Constructors
     Task();
-    Task(const string& title, bool isCompleted);
+    Task(const string& title);
 
     // Getter methods
     string title() const;
