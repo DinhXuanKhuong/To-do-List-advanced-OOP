@@ -9,7 +9,7 @@ string TasksToTableConverter::convert(const vector<shared_ptr<Task> > &tasks, st
         << infoSuitableForRow(_headers[2], _columnSizes[2]) << "|\n";
     
 
-    int sum = _headers.size() - 5;
+    int sum = _headers.size() - 3;
     for(size_t i = 0; i < _headers.size(); i++)
     {
         sum += _columnSizes[i];
@@ -21,7 +21,7 @@ string TasksToTableConverter::convert(const vector<shared_ptr<Task> > &tasks, st
     TaskToRowConverter rowConverter(_columnSizes);
     for (size_t i = 0; i < tasks.size(); i++)
     {
-        table << '|' << left << setw(_columnSizes[0]) << i + 1 << rowConverter.convert(tasks[i]) << '\n';
+        table << '|' << left << setw(_columnSizes[0] - 2) << i + 1 << rowConverter.convert(tasks[i]) << '\n';
         // shared_ptr<Task> task = dynamic_pointer_cast<Task>(os[i]);
     }
 

@@ -18,8 +18,5 @@ int main() {
     manager.DisplayTasks();
     std::cout << "\n";
     std::cout << "\n";
-
     return 0;
-
-    
 }
