@@ -61,5 +61,15 @@ int Date::dayLeft(Date date) const{
     return daysLeft;
 }
 
+/// @brief Convert the date to Vietnamese format
+/// @return 
+string Date::VietFormat() const {
+    ostringstream oss;
+    oss << setfill('0') << setw(2) << _day << "/"
+        << setfill('0') << setw(2) << _month << "/"
+        << _year;
+    return oss.str();
+}
+
 // Override toString method
 string Date::toString() const { return "Date"; }

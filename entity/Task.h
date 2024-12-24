@@ -17,7 +17,7 @@ public:
 
 private:
     string _title;
-    Date _date;
+    Date _deadline;
     Type _type;
     bool _isCompleted;
 
@@ -28,7 +28,7 @@ public:
 
     // Getter methods
     string title() const;
-    Date date() const;
+    Date deadline() const;
     Type type() const;
     bool isCompleted() const;
 
