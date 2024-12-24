@@ -13,8 +13,8 @@ string Task::title() const {
 }
 
 
-bool Task::isCompleted() const {
-    return _isCompleted;
+string Task::isCompleted() const {
+    return _isCompleted ? "Done" : "Not Yet";
 }
 
 // Setter methods

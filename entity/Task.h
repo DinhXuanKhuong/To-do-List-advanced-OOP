@@ -18,7 +18,7 @@ public:
 
     // Getter methods
     string title() const;
-    bool isCompleted() const;
+    string isCompleted() const;
 
     // Setter methods
     void setTitle(const string& title);
