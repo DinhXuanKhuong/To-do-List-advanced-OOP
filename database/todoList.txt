@@ -3,3 +3,4 @@ Push code on Git, false
 Learn math, false
 Learn OOP, false
 Sleep, false
+hangout, false

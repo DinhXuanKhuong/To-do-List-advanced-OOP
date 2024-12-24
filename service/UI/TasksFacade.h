@@ -16,6 +16,7 @@ private:
     TasksToTableConverter _tableConverter; // 
     TextFileDao _textFileDao;
     KeyboardDao _keyboardDao; 
+    ConsoleLogger _consoleLogger;
     // AddTaskCommand _addTaskCommand;
     // RemoveTaskCommand _removeTaskCommand;
     // CompleteTaskCommand _completeTaskCommand;
@@ -39,8 +40,10 @@ public:
                 for (auto task : enteredTasks) {
                     AddTaskCommand addTaskCommand(_manager, task->GetTitle());
                     addTaskCommand.Execute();
+                    _consoleLogger.Update("Added task: " + task->GetTitle());
                 }
                 FileDao->saveAllTasks(_manager.getTasks());
+
             }
             else if (input == 2) {
                 std::string title;
@@ -49,6 +52,7 @@ public:
                 RemoveTaskCommand removeTaskCommand(_manager, title);
                 removeTaskCommand.Execute();
                 FileDao->saveAllTasks(_manager.getTasks());
+                _consoleLogger.Update("Removed task: " + title);
             }
             else if (input == 3) {
                 std::string title;
@@ -57,13 +61,14 @@ public:
                 CompleteTaskCommand completeTaskCommand(_manager, title);
                 completeTaskCommand.Execute();
                 FileDao->saveAllTasks(_manager.getTasks());
+                _consoleLogger.Update("Marked task as completed: " + title);
             }
             else if (input == 4) {
                 std::cout << _tableConverter.convert(_manager.getTasks(), "TODO List");
             }
             else if (input == 5) {
                 FileDao->saveAllTasks(_manager.getTasks());
-                cout << "TO-DO LIST Saved. \nExiting the program\n";
+                _consoleLogger.Update("Exiting the program");
                 break;
             }
         
