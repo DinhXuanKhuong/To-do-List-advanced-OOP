@@ -1,7 +1,7 @@
 #include "Task.h"
 
 // Default constructor
-Task::Task() : _title(""), _date(), _type(OTHER), _isCompleted(false) {}
+Task::Task() : _title(""), _date(), _type(low), _isCompleted(false) {}
 
 // Parameterized constructor
 Task::Task(const string& title, const Date& date, Type type, bool isCompleted)
