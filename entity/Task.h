@@ -7,13 +7,14 @@
 
 using namespace std;
 
+enum Type {
+    high = 1,
+    mid = 2,
+    low = 3,
+};
+
 class Task : public Object {
 public:
-    enum Type {
-        high = 1,
-        mid = 2,
-        low = 3,
-    };
 
 private:
     string _title;
