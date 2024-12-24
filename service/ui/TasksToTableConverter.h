@@ -1,6 +1,6 @@
 #ifndef TASKSTOTABLECONVERTER_H
 #define TASKSTOTABLECONVERTER_H
-
+#pragma once
 #include "ToTableConverter.h"
 #include "../../entity/Task.h"
 using namespace std;

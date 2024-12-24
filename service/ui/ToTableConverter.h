@@ -1,6 +1,6 @@
 #ifndef TOTABLECONVERTER_H
 #define TOTABLECONVERTER_H
-
+#pragma once
 #include "../../entity/Object.h"
 #include <iostream>
 #include <iomanip>

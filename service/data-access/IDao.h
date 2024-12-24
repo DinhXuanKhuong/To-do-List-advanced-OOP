@@ -1,6 +1,6 @@
 #ifndef IDAO_H
 #define IDAO_H
-
+#pragma once
 #include "../entity/Object.h"
 #include <iostream>
 #include <vector>

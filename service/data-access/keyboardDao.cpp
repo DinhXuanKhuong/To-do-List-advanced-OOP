@@ -5,7 +5,7 @@ vector<shared_ptr<Object>> KeyboardDao::getAll() {
 
     string title;
     int n;
-    cout << "Enter the number of tasks: ";
+    cout << "Enter the number of tasks you want to add: ";
     cin >> n;
     cin.ignore();
     for (int i = 0; i < n; i++) {
