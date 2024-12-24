@@ -9,7 +9,7 @@
 
 ## Usage:
 
-### Command promt to run code:
+### Command prompt to run code:
 ```bash
 g++ main.cpp service/UI/*.cpp service/data-access/*.cpp entity/*.cpp -o debug/program.exe
 ```
