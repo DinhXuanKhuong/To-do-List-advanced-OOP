@@ -1,7 +1,8 @@
 #ifndef TOTABLECONVERTER_H
 #define TOTABLECONVERTER_H
-#pragma once
+
 #include "../../entity/Object.h"
+#include "../../entity/Task.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -30,7 +31,7 @@ class ToTableConverter : public Object
     
     public:
         string toString() const override;
-        virtual string convert(const vector<shared_ptr<Object>>& os, string intro) = 0;
+        virtual string convert(const vector<shared_ptr<Task> >& os, string intro) = 0;
 
     protected:
         class ToRowConverter
@@ -41,7 +42,7 @@ class ToTableConverter : public Object
             public:
                 ToRowConverter();
                 ToRowConverter(vector<int> columnSizes);
-                virtual string convert(const shared_ptr<Object>& object) const = 0; // Use a more generic type
+                virtual string convert(const shared_ptr<Task>& tasks) const = 0; // Use a more generic type
         };
 };
 

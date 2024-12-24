@@ -1,6 +1,6 @@
 #ifndef TASK_H
 #define TASK_H
-
+#include <iostream>
 #include <string>
 #include "Object.h"
 
@@ -12,17 +12,19 @@ private:
     bool _isCompleted;
 
 public:
-    // Constructors
-    Task();
-    Task(const string& title);
+    explicit Task(const std::string &title) : _title(title), _isCompleted(false) {}
 
-    // Getter methods
-    string title() const;
-    string isCompleted() const;
+    void MarkCompleted();
 
-    // Setter methods
-    void setTitle(const string& title);
-    void setIsCompleted(bool isCompleted);
+    std::string GetTitle() const;
+
+    void SetTitle(const std::string &title);
+
+    bool IsCompleted() const;
+
+    string DisplayStatus() const;
+
+    std::string toString() const override ;
 };
 
 #endif // TASK_H

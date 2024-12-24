@@ -1,7 +1,7 @@
 #include "keyboardDao.h"
 
-vector<shared_ptr<Object>> KeyboardDao::getAll() {
-    vector<shared_ptr<Object>> tasks;
+vector<shared_ptr<Task> > KeyboardDao::getAllTasks() {
+    vector<shared_ptr<Task> > tasks;
 
     string title;
     int n;

@@ -1,7 +1,6 @@
 #include "TasksToTableConverter.h"
 
-string TasksToTableConverter::convert(const vector<shared_ptr<Object>> &os, string intro)
-{
+string TasksToTableConverter::convert(const vector<shared_ptr<Task> > &tasks, string intro) {
     stringstream table;
     table << intro << "\n\n";
 
@@ -20,30 +19,30 @@ string TasksToTableConverter::convert(const vector<shared_ptr<Object>> &os, stri
 
     // Convert each startup to a row
     TaskToRowConverter rowConverter(_columnSizes);
-    for (size_t i = 0; i < os.size(); i++)
+    for (size_t i = 0; i < tasks.size(); i++)
     {
-        table << '|' << left << setw(_columnSizes[0]) << i + 1 << rowConverter.convert(os[i]) << '\n';
-        shared_ptr<Task> task = dynamic_pointer_cast<Task>(os[i]);
+        table << '|' << left << setw(_columnSizes[0]) << i + 1 << rowConverter.convert(tasks[i]) << '\n';
+        // shared_ptr<Task> task = dynamic_pointer_cast<Task>(os[i]);
     }
 
 
     return table.str();
 }
 
-string TasksToTableConverter::TaskToRowConverter::convert(const shared_ptr<Object> &o) const
-{
+string TasksToTableConverter::TaskToRowConverter::convert(const shared_ptr<Task> &task) const {
     stringstream row;
-    shared_ptr<Task> task = dynamic_pointer_cast<Task>(o);
+    // shared_ptr<Task> task = dynamic_pointer_cast<Task>(o);
     
-    row << infoSuitableForRow(task->title(), _columnSizes[1])
-        << infoSuitableForRow(task->isCompleted(), _columnSizes[2]) << '|';
+
+
+    row << infoSuitableForRow(task->GetTitle(), _columnSizes[1])
+        << infoSuitableForRow(task->DisplayStatus(), _columnSizes[2]) << '|';
 
     return row.str();
 }
 
 
-string infoSuitableForRow(const string &info, int size)
-{
+string infoSuitableForRow(const string &info, int size) {
     stringstream in4;
     if(info.length() < size - 2)
     {

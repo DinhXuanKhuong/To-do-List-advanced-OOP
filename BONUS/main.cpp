@@ -19,32 +19,6 @@ int main() {
     std::cout << "\n";
     std::cout << "\n";
 
-    // // Sample Commands
-    // AddTaskCommand addTask1(manager, "Play games");
-    // AddTaskCommand addTask2(manager, "Read a book");
-    // CompleteTaskCommand completeTask(manager, "Play games");
-    // RemoveTaskCommand removeTask(manager, "Read a book");
-
-    // // Execute commands
-    // addTask1.Execute();
-    // addTask2.Execute();
-    // dao->saveAllTasks(manager.getTasks());
-    // manager.DisplayTasks();
-    // std::cout << "\n";
-    // std::cout << "\n";
-
-    // completeTask.Execute();
-    // dao->saveAllTasks(manager.getTasks());
-    // manager.DisplayTasks();
-    // std::cout << "\n";
-    // std::cout << "\n";
-
-    // removeTask.Execute();
-    // dao->saveAllTasks(manager.getTasks());
-    // manager.DisplayTasks();
-    // std::cout << "\n";
-    // std::cout << "\n";
-
     return 0;
 
     

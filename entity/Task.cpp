@@ -1,27 +1,30 @@
 #include "Task.h"
 
 // Default constructor
-Task::Task() : _title(""),_isCompleted(false) {}
+void Task::MarkCompleted() {
+    _isCompleted = true;
+}
 
-// Parameterized constructor
-Task::Task(const string& title)
-    : _title(title), _isCompleted(false){}
-
-// Getter methods
-string Task::title() const {
+string Task::GetTitle() const {
     return _title;
 }
 
-
-string Task::isCompleted() const {
-    return _isCompleted ? "Done" : "Not Yet";
-}
-
-// Setter methods
-void Task::setTitle(const string& title) {
+void Task::SetTitle(const std::string &title) {
     _title = title;
 }
 
-void Task::setIsCompleted(bool isCompleted) {
-    _isCompleted = isCompleted;
+bool Task::IsCompleted() const {
+    return _isCompleted;
+}
+
+string Task::DisplayStatus() const {
+    if (_isCompleted) {
+        return "Completed";
+    } else {
+        return "Not Completed";
+    }
+}
+
+string Task::toString() const {
+    return "Task";
 }
