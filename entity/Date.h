@@ -4,6 +4,7 @@
 #include "Object.h"
 #include <time.h> // to get current date
 #include <iomanip>
+#include <sstream>
 
 class Date : public Object {
     private:
@@ -28,6 +29,7 @@ class Date : public Object {
     public:
         int dayLeft(Date date) const;
     public:
+        string VietFormat() const;
         string toString() const override;
 };
 
