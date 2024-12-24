@@ -17,7 +17,14 @@ Simplify your task management with a sleek, user-friendly to-do list app that do
 4. Display list of tasks in table.
 5. Exit the program.
 
-## 3. How to promt?
+## 3. Patterns Used:
+### Structural Design Patterns:
+- Facade
+### Behavioral Design Patterns:
+- Observer
+- Command
+
+## 4. How to promt?
 ### Command prompt to run code:
 ```bash
 g++ main.cpp service/UI/*.cpp service/data-access/*.cpp entity/*.cpp -o debug/program.exe
