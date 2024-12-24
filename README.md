@@ -29,7 +29,7 @@ Simplify your task management with a sleek, user-friendly to-do list app that do
 ```bash
 g++ main.cpp service/UI/*.cpp service/data-access/*.cpp entity/*.cpp -o debug/program.exe
 ```
-### After have program.exe we run it by prompt below
+### After having program.exe, we run it by prompt below
 ```bash
 ./debug/program.exe
 ```
