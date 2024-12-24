@@ -2,10 +2,10 @@
 
 
 ## 1. Members
-23127306 - Nguyễn Phương Thảo
-23127315 - Nguyễn Trần Thiên An
-23127398 - Đinh Xuân Khương
-23127538 - Nguyễn Đồng Thanh
+- 23127306 - Nguyễn Phương Thảo
+- 23127315 - Nguyễn Trần Thiên An
+- 23127398 - Đinh Xuân Khương
+- 23127538 - Nguyễn Đồng Thanh
 ## 2. Usage:
 ### 2.1 Introduction
 Simplify your task management with a sleek, user-friendly to-do list app that does exactly what you need. Whether you’re juggling work, studies, or daily errands, Christmas To-do List keeps your tasks organized and manageable with an intuitive interface.

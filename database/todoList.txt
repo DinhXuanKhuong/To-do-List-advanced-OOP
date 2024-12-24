@@ -1,6 +1,6 @@
 Title, Completed
 Push code on Git, false
 Learn math, false
-Learn OOP, false
+Learn OOP, true
 Sleep, false
 hangout, false

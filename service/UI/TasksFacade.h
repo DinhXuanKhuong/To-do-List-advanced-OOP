@@ -20,17 +20,13 @@ private:
     TextFileDao _textFileDao;
     KeyboardDao _keyboardDao; 
     ConsoleLogger _consoleLogger;
-    // AddTaskCommand _addTaskCommand;
-    // RemoveTaskCommand _removeTaskCommand;
-    // CompleteTaskCommand _completeTaskCommand;
+
 public:
     TasksFacade() : _manager({}), _tableConverter({}, {}), _textFileDao(""), _keyboardDao() {}
     void TodoList (const std::string& filePath) {
 
         std::shared_ptr<TextFileDao> FileDao = std::make_shared<TextFileDao>(filePath);
-        // cout << "FileDao created\n";
         std::vector<std::shared_ptr<Task> > tasks = FileDao->getAllTasks();
-        // cout << tasks.size();
         _manager = TaskManager(tasks);
         _tableConverter = TasksToTableConverter({"NO.","Title", "Completed"}, {5, 50, 20});
         int input;
