@@ -21,7 +21,7 @@ public:
     }
 
     ~TaskManager() {
-        // 
+        // do nothing
     }
     std::vector<std::shared_ptr<Task> > getTasks() const {
         return _tasks;

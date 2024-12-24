@@ -28,6 +28,7 @@ public:
         std::shared_ptr<TextFileDao> FileDao = std::make_shared<TextFileDao>(filePath);
         std::vector<std::shared_ptr<Task> > tasks = FileDao->getAllTasks();
         _manager = TaskManager(tasks);
+        _manager.Attach(&_consoleLogger);
         _tableConverter = TasksToTableConverter({"NO.","Title", "Completed"}, {5, 50, 20});
         int input;
         while (true) {
@@ -39,7 +40,6 @@ public:
                 for (auto task : enteredTasks) {
                     AddTaskCommand addTaskCommand(_manager, task->GetTitle());
                     addTaskCommand.Execute();
-                    _consoleLogger.Update("Added task: " + task->GetTitle());
                 }
                 FileDao->saveAllTasks(_manager.getTasks());
 
@@ -51,7 +51,6 @@ public:
                 RemoveTaskCommand removeTaskCommand(_manager, title);
                 removeTaskCommand.Execute();
                 FileDao->saveAllTasks(_manager.getTasks());
-                _consoleLogger.Update("Removed task: " + title);
             }
             else if (input == 3) {
                 std::string title;
@@ -60,7 +59,6 @@ public:
                 CompleteTaskCommand completeTaskCommand(_manager, title);
                 completeTaskCommand.Execute();
                 FileDao->saveAllTasks(_manager.getTasks());
-                _consoleLogger.Update("Marked task as completed: " + title);
             }
             else if (input == 4) {
                 std::cout << _tableConverter.convert(_manager.getTasks(), "TODO List");
