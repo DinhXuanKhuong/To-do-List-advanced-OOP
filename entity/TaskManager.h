@@ -7,7 +7,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
-#include "Observer.h"
+#include "IObserver.h"
 #include "Task.h"
 #include "Subject.h"
 

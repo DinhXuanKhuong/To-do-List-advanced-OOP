@@ -1,5 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include "service/UI/TasksFacade.h"
+#include "service/ui/TasksFacade.h"
 
 #endif // MAIN_H

@@ -4,10 +4,13 @@
 
 #include "../../entity/Object.h"
 
-#include "../data-access/keyboardDao.h"
+#include "../data-access/KeyboardDao.h"
 #include "../data-access/TextFileDao.h"
 #include "TasksToTableConverter.h"
-#include "../../entity/Command.h"
+#include "../../entity/ICommand.h"
+#include "../../entity/AddTaskComand.h"
+#include "../../entity/RemoveTaskComand.h"
+#include "../../entity/CompleteTaskCommand.h"
 #include "../../entity/ConsoleLogger.h"
 
 class TasksFacade : public Object {

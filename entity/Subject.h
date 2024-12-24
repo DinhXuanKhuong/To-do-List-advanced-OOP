@@ -1,25 +1,25 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 
-#include "Observer.h"
+#include "IObserver.h"
 
 
 // Subject class for notifying observers
 class Subject {
 private:
-    std::list<Observer *> observers_;
+    std::list<IObserver *> observers_;
 
 public:
-    void Attach(Observer *observer) {
+    void Attach(IObserver *observer) {
         observers_.push_back(observer);
     }
 
-    void Detach(Observer *observer) {
+    void Detach(IObserver *observer) {
         observers_.remove(observer);
     }
 
     void Notify(const std::string &message) {
-        for (Observer *observer : observers_) {
+        for (IObserver *observer : observers_) {
             observer->Update(message);
         }
     }

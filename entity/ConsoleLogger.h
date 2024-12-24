@@ -3,10 +3,10 @@
 #include <iostream>
 #include <string>
 
-#include "Observer.h"
+#include "IObserver.h"
 #include "Subject.h"    
 // Observer Implementation: Console Logger
-class ConsoleLogger : public Observer {
+class ConsoleLogger : public IObserver {
 public:
     void Update(const std::string& message) override {
         std::cout << "[LOG]: " << message << "\n";
