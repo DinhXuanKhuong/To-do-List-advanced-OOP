@@ -24,7 +24,7 @@ Simplify your task management with a sleek, user-friendly to-do list app that do
 - Observer
 - Command
 
-## 4. How to promt?
+## 4. How to prompt?
 ### Command prompt to run code:
 ```bash
 g++ main.cpp service/UI/*.cpp service/data-access/*.cpp entity/*.cpp -o debug/program.exe
