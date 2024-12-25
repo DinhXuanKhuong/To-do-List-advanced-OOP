@@ -1,8 +1,9 @@
 // TasksFacade.cpp
 #include "TasksFacade.h"
 #include <iostream>
+#include <limits>
 #include <memory>
-
+#include  <regex>
 TasksFacade::TasksFacade() : _manager({}), _tableConverter({}, {}), _textFileDao(""), _keyboardDao() {}
 
 void TasksFacade::TodoList(const std::string &filePath) {
@@ -14,8 +15,18 @@ void TasksFacade::TodoList(const std::string &filePath) {
     int input;
     while (true) {
         printMenu();
-        std::cin >> input;
-        std::cin.ignore();
+        try {
+            std::string inputStr;
+            std::getline(std::cin, inputStr);
+            std::regex pattern("^[1-5]$");
+            if (!std::regex_match(inputStr, pattern)) {
+            throw std::invalid_argument("Invalid input");
+            }
+            input = std::stoi(inputStr);
+        } catch (const std::invalid_argument &e) {
+            std::cout << e.what() << ". Please try again.\n";
+            continue;
+        }
         if (input == 1) {
             std::vector<std::shared_ptr<Task>> enteredTasks = _keyboardDao.getAllTasks();
             for (auto task : enteredTasks) {
@@ -44,6 +55,11 @@ void TasksFacade::TodoList(const std::string &filePath) {
             FileDao->saveAllTasks(_manager.getTasks());
             _consoleLogger.Update("Exiting the program");
             break;
+        }
+        else {
+            std::cout << "Invalid input. Please try again.\n";
+            // cin >> input;
+            continue;
         }
     }
 }

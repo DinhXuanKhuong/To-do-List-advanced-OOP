@@ -6,8 +6,18 @@ vector<shared_ptr<Task> > KeyboardDao::getAllTasks() {
     string title;
     int n;
     cout << "Enter the number of tasks you want to add: ";
-    cin >> n;
-    cin.ignore();
+    string input;
+    while(true) {
+        getline(cin, input);
+        regex pattern("\\d+");
+        smatch match;
+        if (regex_match(input, match, pattern)) {
+            n = stoi(input);
+            break;
+        } else {
+            cout << "Invalid input. Please enter a valid number." << endl;
+        }
+    }
     for (int i = 0; i < n; i++) {
         cout << "Enter the title of task " << i + 1 << ": ";
         getline(cin, title);

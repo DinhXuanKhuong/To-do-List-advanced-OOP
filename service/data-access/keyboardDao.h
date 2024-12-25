@@ -3,7 +3,7 @@
 #pragma once
 #include "IDao.h"
 #include "../../entity/Task.h"
-
+#include <regex>
 class KeyboardDao : public IDao {
     public:
         vector<shared_ptr<Task> > getAllTasks() override;

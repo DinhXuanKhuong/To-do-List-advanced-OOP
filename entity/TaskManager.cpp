@@ -24,6 +24,9 @@ void TaskManager::RemoveTask(const std::string &title) {
         Notify("Removed task: " + title);
         _tasks.erase(it, _tasks.end());
     }
+    else {
+        Notify("Task not found: " + title);
+    }
 }
 
 void TaskManager::MarkTaskCompleted(const std::string &title) {
@@ -34,4 +37,5 @@ void TaskManager::MarkTaskCompleted(const std::string &title) {
             return;
         }
     }
+    Notify("Task not found: " + title);
 }
