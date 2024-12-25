@@ -1,6 +1,3 @@
 Title, Completed
-Push code on Git, false
-Learn math, false
-Learn OOP, true
-Sleep, false
-hangout, false
+Hangout, true
+Learn OOP with happiness, false

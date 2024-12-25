@@ -24,7 +24,6 @@ private:
 public:
     TasksFacade() : _manager({}), _tableConverter({}, {}), _textFileDao(""), _keyboardDao() {}
     void TodoList (const std::string& filePath) {
-
         std::shared_ptr<TextFileDao> FileDao = std::make_shared<TextFileDao>(filePath);
         std::vector<std::shared_ptr<Task> > tasks = FileDao->getAllTasks();
         _manager = TaskManager(tasks);
@@ -42,7 +41,6 @@ public:
                     addTaskCommand.Execute();
                 }
                 FileDao->saveAllTasks(_manager.getTasks());
-
             }
             else if (input == 2) {
                 std::string title;
@@ -61,14 +59,16 @@ public:
                 FileDao->saveAllTasks(_manager.getTasks());
             }
             else if (input == 4) {
-                std::cout << _tableConverter.convert(_manager.getTasks(), "TODO List");
+                std::cout << _tableConverter.convert(_manager.getTasks(), "Your TODO List:");
             }
             else if (input == 5) {
                 FileDao->saveAllTasks(_manager.getTasks());
                 _consoleLogger.Update("Exiting the program");
                 break;
             }
-        
+            else {
+                std::cout << "Invalid input. Please try again.\n";
+            }
         }
     }
     void printMenu() {
