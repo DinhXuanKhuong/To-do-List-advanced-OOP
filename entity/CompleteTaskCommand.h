@@ -1,3 +1,4 @@
+// CompleteTaskCommand.h
 #ifndef COMPLETETASKCOMMAND_H
 #define COMPLETETASKCOMMAND_H
 
@@ -10,12 +11,9 @@ private:
     std::string _taskTitle;
 
 public:
-    CompleteTaskCommand(TaskManager &manager, const std::string &taskTitle)
-        : _manager(manager), _taskTitle(taskTitle) {}
+    CompleteTaskCommand(TaskManager &manager, const std::string &taskTitle);
 
-    void Execute() override {
-        _manager.MarkTaskCompleted(_taskTitle);
-    }
+    void Execute() override;
 };
 
 #endif // COMPLETETASKCOMMAND_H

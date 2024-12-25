@@ -1,5 +1,6 @@
-#ifndef CONSOLE_LOGGER_H
-#define CONSOLE_LOGGER_H
+// ConsoleLogger.h
+#ifndef CONSOLELOGGER_H
+#define CONSOLELOGGER_H
 #include <iostream>
 #include <string>
 
@@ -8,9 +9,7 @@
 // Observer Implementation: Console Logger
 class ConsoleLogger : public IObserver {
 public:
-    void Update(const std::string& message) override {
-        std::cout << "[LOG]: " << message << "\n";
-    }
+    void Update(const std::string& message) override;
 };
 
-#endif // CONSOLE_LOGGER_H
+#endif // CONSOLELOGGER_H

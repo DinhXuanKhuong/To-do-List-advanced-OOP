@@ -1,4 +1,0 @@
-Buy groceries, false
-Finish homework, true
-Call the doctor, true
-Plan the trip, false
